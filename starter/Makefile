@@ -2,11 +2,17 @@
 
 grammar := ArrayInit
 build-dir := build
+parser-dir := parser
 
-build: export CLASSPATH=".:/usr/local/Cellar/antlr/4.7.1/antlr-4.7.1-complete.jar:$$CLASSPATH"
-build:
+gobuild:
+	antlr4 -Dlanguage=Go -o $(parser-dir) $(grammar).g4
+	go build -o $(build-dir)/Test Test.go
+
+javabuild: export CLASSPATH=".:/usr/local/Cellar/antlr/4.7.1/antlr-4.7.1-complete.jar:$$CLASSPATH"
+javabuild:
 	antlr4 -o $(build-dir) $(grammar).g4
 	javac $(build-dir)/*.java
 
 clean:
 	rm -rf $(build-dir)
+	rm -rf $(parser-dir)
