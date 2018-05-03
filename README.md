@@ -5,6 +5,10 @@ Reference, 2nd
 Edition"](https://pragprog.com/book/tpantlr2/the-definitive-antlr-4-reference),
 by Terence Parr.
 
+The code examples in the book are written in Java. However, since the release
+of ANTLR 4, Go is an officially supported target language. I wanted to write in
+Go, so examples have been converted to Go.
+
 ## Setup
 
 Install ANTLR using homebrew:
