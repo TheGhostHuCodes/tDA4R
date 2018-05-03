@@ -2,6 +2,11 @@
 
 grammar := Expr
 build-dir := build
+parser-dir := parser
+
+gobuild:
+	antlr4 -Dlanguage=Go -o $(parser-dir) $(grammar).g4
+	go build -o $(build-dir)/ExprJoyRide ExprJoyRide.go
 
 javabuild: export CLASSPATH=".:/usr/local/Cellar/antlr/4.7.1/antlr-4.7.1-complete.jar:$$CLASSPATH"
 javabuild:
@@ -10,3 +15,4 @@ javabuild:
 
 clean:
 	rm -rf $(build-dir)
+	rm -rf $(parser-dir)
