@@ -1,4 +1,4 @@
-.PHONY: build clean
+.PHONY: gobuild javabuild clean
 
 grammar := Expr
 build-dir := build
