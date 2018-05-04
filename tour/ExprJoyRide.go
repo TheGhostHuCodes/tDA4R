@@ -5,7 +5,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/TheGhostHuCodes/tDA4R/tour/parser"
+	"github.com/TheGhostHuCodes/tDA4R/tour/parser/Expr"
 	"github.com/antlr/antlr4/runtime/Go/antlr"
 )
 
