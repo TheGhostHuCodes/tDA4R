@@ -6,7 +6,7 @@ parser-dir := parser
 
 gobuild:
 	antlr4 -Dlanguage=Go -o $(parser-dir)/$(grammar1) $(grammar1).g4
-	go build -o $(build-dir)/ExprJoyRide ExprJoyRide.go
+	go build -o $(build-dir)/ExprJoyRide exprJoyRide/ExprJoyRide.go
 
 javabuild: export CLASSPATH=".:/usr/local/Cellar/antlr/4.7.1/antlr-4.7.1-complete.jar:$$CLASSPATH"
 javabuild:
