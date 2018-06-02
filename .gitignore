@@ -2,3 +2,4 @@
 build/
 vendor/
 .vscode/
+__pycache__/
