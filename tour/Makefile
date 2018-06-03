@@ -2,6 +2,7 @@
 
 grammar1 := Expr
 grammar2 := LabeledExpr
+java-grammar := Java
 calc-grammar := Calc
 build-dir := build
 parser-dir := parser
@@ -9,6 +10,8 @@ parser-dir := parser
 gobuild:
 	antlr4 -Dlanguage=Go -o $(parser-dir)/$(grammar1) $(grammar1).g4
 	go build -o $(build-dir)/ExprJoyRide exprJoyRide/ExprJoyRide.go
+	antlr4 -Dlanguage=Go -o $(parser-dir)/$(java-grammar) $(java-grammar).g4
+	go build -o $(build-dir)/Interfacer interfacer/interfacer.go
 	antlr4 -Dlanguage=Go -o $(parser-dir)/$(calc-grammar) $(calc-grammar).g4
 	go build -o $(build-dir)/CalcLexer calc-go/lexer/calc-lexer.go
 	go build -o $(build-dir)/CalcParser calc-go/parser/calc-parser.go
