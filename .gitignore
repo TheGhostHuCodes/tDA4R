@@ -1,6 +1,13 @@
+# ANTLR
 .antlr/
+
+# Golang
 build/
 vendor/
+
+# Python
+__pycache__/
+
+# IDE metadata
 *.swp
 .vscode/
-__pycache__/
