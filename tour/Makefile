@@ -4,6 +4,7 @@ grammar1 := Expr
 grammar2 := LabeledExpr
 java-grammar := Java
 calc-grammar := Calc
+xml-grammar := XMLLexer
 build-dir := build
 parser-dir := parser
 
@@ -23,6 +24,7 @@ javabuild: export CLASSPATH=".:/usr/local/Cellar/antlr/4.7.1/antlr-4.7.1-complet
 javabuild:
 	antlr4 -o $(build-dir) $(grammar1).g4
 	antlr4 -no-listener -visitor -o $(build-dir) $(grammar2).g4
+	antlr4 -o $(build-dir) $(xml-grammar).g4
 	javac $(build-dir)/*.java
 
 clean:
